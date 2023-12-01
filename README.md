@@ -52,8 +52,8 @@ Twilio
 Keras
 TensorFlow
 ## Contributors
-Harishh A
-Swetha M, Dinesh L &Sridevi T
+
+Swetha M,Harishh A, Dinesh L &Sridevi T
 
 
 Feel free to contribute to the project by submitting issues or pull requests.
