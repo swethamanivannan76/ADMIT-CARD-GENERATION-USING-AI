@@ -1,0 +1,245 @@
+/* admitcard_ui.css */
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    text-align: left;
+    background-color: #0a0a0a;   
+}
+.admit-card {
+    max-width: 700px;
+    height: 250px;
+    margin: 15px auto;
+    padding: 60px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(230, 220, 220, 0.2), 0 6px 20px 0 rgba(230, 220, 220, 0.2); /* Add a slight shadow */
+    background-color: #fff;
+    border-color: #2fd0d8;
+    position: relative;
+    top: 80px;
+    border: 1px solid hsl(204 100% 59%);
+}
+
+/* Styles for the photo container */
+.photo-container {
+    text-align: right;
+    margin-bottom: 15px;
+    position: absolute;
+    border-radius: 8px;
+    border: 2px solid #fffefe;
+    top: 70px;
+    right: 70px;
+    width: 120px; /* Adjust the width of the photo container */
+    height: 170px; /* Adjust the height of the photo container */
+    overflow: hidden;
+}
+
+.photo {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    max-height: 100%;
+    border-radius: 8px; /* Rounded corners */
+    /* border: 2px solid #090909; */
+    padding: 5px;
+    background-color: white;
+    object-fit: contain;
+    display: block;
+}
+
+/* Styles for the signature container */
+.signature-container {
+    text-align: right;
+    margin-bottom: 15px;
+    position: absolute;
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #f9f6f6;
+    top: 260px; /* Adjust the top position as needed */
+    right: 50px;
+    width: 160px; /* Adjust the width of the photo container */
+    height: 70px; /* Adjust the height of the photo container */
+    overflow: hidden;
+}
+
+.signature {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    max-height: 100%;
+    border-radius: 8px; /* Rounded corners */
+    /* border: 2px solid #0d0d0d; */
+    padding: 5px;
+    object-fit: contain;
+    background-color: white;
+    display: block;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 1px;
+    left: 330px;
+    text-align : center;
+
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2fd0d8;
+    color: #0f0f0f;
+    text-decoration: none;
+    text-shadow:1px 1px 2px #484848;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: absolute;
+    right: 350px;
+    top: 620px;
+}
+
+.buttons button:hover{
+    background-color: #40f43a;
+    transform: scale(1.05); /* Increase size on hover */
+    box-shadow: 0 4px 8px 0 rgba(230, 220, 220, 0.2), 0 6px 20px 0 rgba(230, 220, 220, 0.2); /* Additional shadow on hover */
+}
+
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2fd0d8;
+    color: #080808;
+    text-decoration: none;
+    text-shadow:1px 1px 2px #525253;
+    /* box-shadow: 0 4px 8px 0 rgba(230, 220, 220, 0.2), 0 6px 20px 0 rgba(230, 220, 220, 0.2); */
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: absolute;
+    left: 350px;
+    top: 620px;
+    
+}
+
+.button a:hover {
+    background-color: #40f43a;
+    transform: scale(1.05); /* Increase size on hover */
+    box-shadow: 0 4px 8px 0 rgba(230, 220, 220, 0.2), 0 6px 20px 0 rgba(230, 220, 220, 0.2); /* Additional shadow on hover */
+}
+
+#generateQRButton{
+    left: 600px;
+    width: fit-content;
+}
+/* Add this to your CSS file */
+.toast {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.toast-text {
+    font-size: 16px;
+}
+.gradient-text {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 50px;
+    color: transparent;
+  }
+  .text-change-container {
+    height: 100px;
+    width: 800px;
+    background-color: rgb(0, 0, 0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .text-change {
+    font-family: 'Goldman', monospace;
+    font-weight: normal;
+    font-size:20px;
+    color: rgba(200, 200, 200, 1);
+    filter: drop-shadow(0 0 0.3em hsl(98 100% 62%));
+  }
+  
+  .dud {
+    color: #2fd0d8;
+    filter: drop-shadow(0 0 0.5em #2fd0d8);
+  }
+  h1{
+    text-align: center;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;  /* Increase the width to ensure content is visible */
+    position: relative;
+    align-items: center;
+}
+
+.textContent {
+    width: 100%; /* Make sure the text content spans the full width */
+    text-align: center; /* Center the content horizontally */
+    margin-top: 20px; /* Add some top margin to separate from the modal content */
+}
+
+
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  

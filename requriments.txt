@@ -1,0 +1,10 @@
+Flask==2.1.1
+opencv-python==4.5.3.56
+numpy==1.21.2
+Pillow==8.3.2
+mysql-connector-python==8.0.25
+pytesseract==0.3.8
+twilio==6.51.1
+tensorflow==2.5.0
+Keras==2.4.3
+fpdf==1.7.2

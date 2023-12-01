@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+</head>
+<body>
+    <h1>Verify OTP</h1>
+    <p>Enter the OTP sent to {{ verified_number }}</p>
+    <form method="post">
+        <input type="text" name="otp" placeholder="Enter OTP">
+        <button type="submit">Verify OTP</button>
+    </form>
+    {% if verification_status %}
+    <p>{{ verification_status }}</p>
+    {% endif %}
+</body>
+</html>

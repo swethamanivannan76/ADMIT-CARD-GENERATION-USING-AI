@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signature Detection</title>
+</head>
+<body>
+    <h1>Signature Detection</h1>
+    <form action="/signature" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" accept=".jpg, .png, .jpeg" required><br>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br>
+        <input type="submit" value="Detect Signature">
+    </form>
+</body>
+</html>
+

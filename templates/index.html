@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+  <title>Home</title>
+</head>
+<body>
+
+<div class="container-left">
+  <article>       
+    <h1 class="gradient-text">Welcome to ADMIT CARD system</h1>
+  </article> 
+  <div class="text-change-container">
+    <div class="text-change"></div>
+  </div>
+  <div class="text-change-container">
+    <div class="text-change"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="front front-image2"></div>
+    <div class="back">
+      <a href="{{ url_for('enter_details') }}">Enter Details</a>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container-right">
+  <div class="container">
+    <div class="card">
+      <div class="front front-image1"></div>
+      <div class="back">
+        <a href="{{ url_for('generate_admit_card_route') }}">Generate Admit Card</a>
+      </div>
+    </div>
+  </div>
+
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

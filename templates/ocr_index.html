@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Using Flask</title>
+</head>
+<body>
+    <h1>Aadhar Card OCR</h1>
+    <form action="/detect_ocr" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept=".png, .jpg, .jpeg" required>
+        <br>
+        <label for="username">Enter Your Name:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <input type="submit" value="Detect OCR">
+    </form>
+</body>
+</html>

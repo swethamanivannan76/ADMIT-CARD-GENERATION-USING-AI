@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/generate_admit_card.css') }}">
+    <title>Generate Admit Card</title>
+</head>
+<body>
+    <h1 class="gradient-text">Generate Admit Card</h1>
+    <div class="text-change-container">
+        <div class="text-change"></div>
+    </div>
+    <div class="text-change-container">
+        <div class="text-change"></div>
+    </div>
+    <form method="POST" action="/generate_admit_card">
+        <label for="phone_number">Enter Phone Number:</label>
+        <input type="text" name="phone_number" required>
+        <br>
+        <div id="otp-section" style="display: none;">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" name="otp" required>
+            <br>
+        </div>
+        <button id="otp-button" type="button" onclick="sendOtp()">Get OTP</button>
+        <button id="generate-button" type="submit" style="display: none;">Generate Admit Card</button>
+    </form>
+  
+    
+      
+    
+    <div class="go-back-button">
+        <a href="/">Go Back</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/generate_admit_card.js') }}"></script>
+  
+    </div>
+{% if error_message %}
+<script>
+    function showAlertBox(message) {
+        const alertBox = document.getElementById('alert-box');
+        const alertMessage = document.getElementById('alert-message');
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+    }
+
+    function closeAlertBox() {
+        const alertBox = document.getElementById('alert-box');
+        alertBox.style.display = 'none';
+    }
+
+    // Check if error_message is not empty, and display the alert
+    const error_message = "{{ error_message }}"; // Get the error message from Flask template
+    if (error_message) {
+        showAlertBox(error_message);
+    }
+</script>
+{% endif %}
+
+</body>
+</html>

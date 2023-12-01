@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admit Card</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admit_card.css') }}">
+    
+</head>
+<body>
+    <h1 class="gradient-text"> Here is your CARD!!</h1>
+    <div class="text-change-container">
+        <div class="text-change"></div>
+      </div><div class="text-change-container">
+        <div class="text-change"></div>
+      </div>
+    <div class="admit-card">
+        <div class="card">
+            <h2>Admit Card</h2>
+            <p><strong>Name:</strong> {{ user[1] }}</p>
+            <p><strong>DOB:</strong> {{ user[2] }}</p>
+            <p><strong>Address:</strong> {{ user[3] }}</p>
+            <p><strong>Gender:</strong> {{ user[4] }}</p>
+            <p><strong>Email:</strong> {{ user[5] }}</p>
+            <p><strong>Phone:</strong> {{ user[6] }}</p>
+            
+        </div>
+
+        <!-- Display person's photo{{ user[7] }} -->
+        <div class="photo-container">
+            <img class="photo" src="{{ user[7] }}" alt="Person's Photo" width="110" height="170">
+        </div>
+
+        <!-- Display signature{{ user[8] }} -->
+        <div class="signature-container">
+            <img class="signature" src="{{ user[8] }}" alt="Signature" width="170" height="60">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="downloadButton" class="buttons"><a href="/download_admit_card">Download Admit Card</a></button>
+        <button id="generateQRButton" class="buttons">Generate QR Code</button>
+     </div>
+
+    <div id="toast" class="toast">
+        <span id="toastText" class="toast-text">Download Successfully</span>
+      
+    </div>
+   
+    <div class="button">
+        <a href="/">Go Back</a>
+    </div>
+
+    <div id="qrcodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modalQrCodeImage" src="" alt="QR Code">
+            <div class="textContent">
+                <p>  
+                    Here is your QR
+                </p>
+                <button id="downloadQRButton" class="download-button">Download QR Code</button>
+            </div>
+        </div>
+                
+    </div>
+    
+    
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>   
+
+    <script>
+          const generateQRButton = document.getElementById('generateQRButton');
+  const qrcodeModal = document.getElementById('qrcodeModal');
+  const modalQrCodeImage = document.getElementById('modalQrCodeImage');
+  const closeBtn = document.querySelector('.close-button');
+  const downloadQRButton =document.getElementById('downloadQRButton');
+  generateQRButton.addEventListener('click', async () => {
+      const user = {
+          name: "{{ user[1] }}",
+          dob: "{{ user[2] }}",
+          address: "{{ user[3] }}",
+          gender: "{{ user[4] }}",
+          email: "{{ user[5] }}",
+          phone: "{{ user[6] }}"
+           
+          
+          // Add other user data fields here
+      };
+
+      
+  
+      try {
+          const response = await fetch('/generate_qr', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(user)
+          });
+  
+          if (response.ok) {
+              const qrCodeUrl = URL.createObjectURL(await response.blob());
+              modalQrCodeImage.src = qrCodeUrl;
+              qrcodeModal.style.display = 'block';
+          }
+      } catch (error) {
+          console.error(error);
+      }
+  });
+  
+  closeBtn.addEventListener('click', () => {
+      qrcodeModal.style.display = 'none';
+  });
+  
+  window.addEventListener('click', (event) => {
+      if (event.target === qrcodeModal) {
+          qrcodeModal.style.display = 'none';
+      }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const qrCodeModal = document.getElementById('qrcodeModal');
+    const downloadQRButton = document.getElementById('downloadQRButton');
+    const modalQrCodeImage = document.getElementById('modalQrCodeImage');
+
+    downloadQRButton.addEventListener('click', function() {
+        const qrCodeImageUrl = modalQrCodeImage.src;
+
+        // Create a temporary anchor element for download
+        const downloadAnchor = document.createElement('a');
+        downloadAnchor.href = qrCodeImageUrl;
+        downloadAnchor.download = 'qrcode.png'; // Set the desired file name
+        downloadAnchor.style.display = 'none';
+
+        // Append the anchor to the body and simulate a click
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+
+        // Clean up
+        document.body.removeChild(downloadAnchor);
+    });
+});
+
+
+     </script>
+        
+    <script src="{{ url_for('static', filename='js/admit_card.js') }}"></script>
+</body>
+</html>

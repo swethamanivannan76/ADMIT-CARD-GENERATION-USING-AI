@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Details</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/enter_details.css') }}">
+<body>
+    <h1 class="gradient-text1">Enter Your Details</h1>
+    <div class="text-change-container">
+        <div class="text-change"></div>
+    </div>
+    <div class="text-change-container">
+        <div class="text-change"></div>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form method="POST" action="/enter_details" enctype="multipart/form-data">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" required>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" name="dob" required class="date-input">
+                </div>
+                <div class="form-row select-row">
+                    <label for="gender">Gender:</label>
+                    <select name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" name="phone" required>
+                </div>
+                <div class="form-email">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <label for="address">Address:</label>
+                <textarea name="address" required></textarea>
+                <div class="form-row">
+                    <label for="aadhar_number">Aadhar Number:</label>
+                    <input type="text" name="aadhar_number" required>
+                    <label for="aadhar_image">Upload Aadhar Image:</label>
+                    <input type="file" name="aadhar_image" accept=".jpg, .jpeg, .png" required>
+                </div>
+              
+
+                <div class="form-row">
+                    <label for="photo">Upload Photo:</label>
+                    <input type="file" name="photo" accept=".jpg, .jpeg, .png" required>
+                    <label for="signature">Upload Signature:</label>
+                    <input type="file" name="signature" accept=".jpg, .jpeg, .png" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="go-back-button">
+                <a href="/">Go Back</a>
+            </div>
+
+            {% if error_messages %}
+            <script>
+                var error_message = '';
+                var errorMessages = [
+                    {% for error_message in error_messages.values() %}
+                        {% if error_message %}
+                            "{{ error_message|e }}",
+                        {% endif %}
+                    {% endfor %}
+                ];
+                var errorMessage = errorMessages.join('\n');
+                if (errorMessage.trim() !== '') {
+                    alert(errorMessage);
+                }
+            </script>
+        {% endif %}
+        
+    
+                                    
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/enter_details.js') }}"></script>
+       <script>
+        // function validateForm() {
+        //     var errorMessages = {
+        //         photo: "{{ error_messages.photo }}",
+        //         signature: "{{ error_messages.signature }}",
+        //         both: "{{ error_messages.both }}",
+        //         name: "{{ error_messages.name }}",
+        //         aadhar_image: "{{ error_messages.aadhar_image }}",
+        //         aadhar_mismatch: "{{ error_messages.aadhar_mismatch }}"
+        //     };
+
+        //     var errorMessage = "";
+        //     for (var field in errorMessages) {
+        //         if (errorMessages[field]) {
+        //             errorMessage += errorMessages[field] + "\n";
+        //         }
+        //     }
+
+        //     if (errorMessage) {
+        //         alert(errorMessage);
+        //         return false; // Prevent form submission
+        //     }
+
+        //     return true; // Allow form submission
+        // }
+    </script>
+</body>
+</html>
+

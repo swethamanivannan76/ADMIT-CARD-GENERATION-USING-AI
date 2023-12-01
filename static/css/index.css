@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family:'Poppins',serif
+  }
+  
+  
+ body {
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    color: rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    align-items: center;
+    
+  }
+  
+  .container {
+    width: 350px;
+    height: 500px;
+    perspective: 800px;
+  }
+  
+  .container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+  .container-left{
+    width: 50%;
+    padding: 100px;
+    background-color: black;
+    color:aliceblue;
+    box-sizing: border-box;
+  }
+  .container-right{
+    width: 50%;
+    padding: 20px;
+    background-color: black;
+    color:aliceblue;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    height: 35vh;
+    width: 35vh;
+    position: relative;
+    margin: 100px auto  ;
+    margin-left: 10px;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    background-color: #2fd0d8;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  .back:hover {
+    background-color: hsl(98 100% 62%);
+  }
+  .back a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 20px;
+    height: 500%;
+    width: 100%;
+    margin: 100px auto  ;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .front-image1 {
+    background-image: url('../images/idcard.png'); /* Relative path to the image */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.front-image2 {
+    background-image: url('../images/schoolregistration.png'); /* Relative path to the image */
+    background-size: 85% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+  
+  
+  .back {
+    background-color: hsl(98 100% 62%);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+ /* index2.css */
+/* Your existing styles... */
+
+/* Add this new style for gradient text */
+.gradient-text {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 50px;
+    color: transparent;
+  }
+  /* Add this to your index.css or a separate CSS file */
+.text-change-container {
+  height: 100px;
+  width: 800px;
+  background-color: rgb(0, 0, 0,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.text-change {
+  font-family: 'Goldman', monospace;
+  font-weight: normal;
+  font-size:20px;
+  color: rgba(200, 200, 200, 1);
+  filter: drop-shadow(0 0 0.3em hsl(98 100% 62%));
+}
+
+.dud {
+  color: #2fd0d8;
+  filter: drop-shadow(0 0 0.5em #2fd0d8);
+}

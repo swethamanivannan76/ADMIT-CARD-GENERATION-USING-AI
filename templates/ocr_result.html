@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Result</title>
+</head>
+<body>
+    <h1>OCR Result</h1>
+    <p><strong>Extracted Text:</strong></p>
+    <pre>{{ extracted_text }}</pre>
+    <p><strong>Aadhar Number:</strong> {{ aadhar_number }}</p>
+    {% if username_found %}
+        <p><strong>Username Found:</strong> Yes</p>
+    {% else %}
+        <p><strong>Username Found:</strong> No</p>
+    {% endif %}
+    <hr>
+    <a href="/">Go Back</a>
+</body>
+</html>

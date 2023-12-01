@@ -1,0 +1,180 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.form-container {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 10px 0 rgba(160, 194, 100, 0.2), 0 10px 25px 0 rgba(160, 194, 100, 0.2);
+    width: 70%;
+    color: rgb(255, 255, 255);
+    height: 400px;
+    max-width: 800px;
+    border: 2px solid hsl(204 100% 59%); 
+    position: absolute;
+    top:50px;
+}
+.form-container label{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.form-container input,
+.form-container select,
+.form-container textarea,
+.form-container button {
+    display: block;
+    background-color: transparent;
+    margin-bottom: 5px;
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #756d6d;
+    border-radius: 5px;
+    color:hsl(0, 0%, 100%) ;
+    border-color: hsl(204 100% 59%); 
+    outline: none; 
+   font-size: 15px;
+   font-style: bold;
+   background-color: transparent;
+    font-style: bold;
+    
+}
+.form-container .form-row {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+.form-email label{
+    width: 35%;
+   
+}
+.form-container .form-row input {
+    width: 48%;
+}
+.form-container .form-row label{
+    width: 10%;
+}
+.form-container .form-row.select-row {
+    width: 100%;
+}
+
+.form-container .form-row.select-row label{
+    width: 10%;
+}
+.form-container .form-row.select-row select {
+    width: 80%;
+}
+.form-container .form-row.select-row select {
+    width: 50%;
+}
+.form-container button[type="submit"]{
+    display: block;
+    width: 20%; /* Adjust the width of the button */
+    padding: 8px;
+    background-color:hsl(204 100% 59%);
+    color: solid #000000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family:'Times New Roman', Times, serif;
+    font-style: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px #525253;
+    position: relative;
+    top: 15px;
+}
+ .form-container button[type="submit"]:hover {
+    background-color:hsl(98 100% 62%);
+    transform: scale(1.05);
+    
+  }
+  .gradient-text {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 15px;
+    color: transparent;
+  }
+  .gradient-text1 {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 35px;
+    color: transparent;
+  }
+  h1{
+    text-align: center;
+    position:relative;
+    top: 20px;
+  }
+  .text-change-container {
+    height: 100px;
+    width: 800px;
+    background-color: rgb(0, 0, 0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .text-change {
+    font-family: 'Goldman', monospace;
+    font-weight: normal;
+    font-size:15px;
+    color: rgba(200, 200, 200, 1);
+    filter: drop-shadow(0 0 0.3em hsl(98 100% 62%));
+  }
+  
+  .dud {
+    color: #2fd0d8;
+    filter: drop-shadow(0 0 0.5em #2fd0d8);
+  }
+.date-input{
+filter: invert(25%);
+}
+.go-back-button {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.go-back-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: hsl(98 100% 62%);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  top: 60px;
+}
+
+option {
+  color: #000000; /* Change this to your desired font color */
+}
